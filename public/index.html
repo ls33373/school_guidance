@@ -25,7 +25,7 @@
     <div class="card" style="animation-delay:0.05s">
       <div class="input-group">
         <label>학번</label>
-        <input type="text" placeholder="학번을 입력하세요." />
+        <input id="studentId" type="text" placeholder="학번을 입력하세요." />
       </div>
     </div>
 
@@ -39,28 +39,28 @@
       </div>
       <div class="checkbox-grid">
         <label class="checkbox-item">
-          <input type="checkbox" />
+          <input id="chk-gyobok" type="checkbox" />
           <span class="checkbox-box"></span>
           <span class="checkbox-label">교복 미착용 및 교복 변형</span>
         </label>
         <label class="checkbox-item">
-          <input type="checkbox" />
+          <input id="chk-silnae" type="checkbox" />
           <span class="checkbox-box"></span>
           <span class="checkbox-label">실내화 등교</span>
         </label>
         <div class="other-checkbox-wrap">
           <label class="checkbox-item other-top" onclick="toggleOther(this, 'other-bokjang')">
-            <input type="checkbox" />
+            <input id="chk-bokjang-etc" type="checkbox" />
             <span class="checkbox-box"></span>
             <span class="checkbox-label">기타</span>
           </label>
           <div class="other-input-wrap" id="other-bokjang">
-            <textarea class="other-input" placeholder="기타 내용을 자세히 입력하세요..."></textarea>
+            <textarea id="txt-bokjang-etc" class="other-input" placeholder="기타 내용을 자세히 입력하세요..."></textarea>
           </div>
         </div>
       </div>
     </div>
- 
+
     <!-- 전자기기 위반 -->
     <div class="section-card" style="animation-delay:0.15s">
       <div class="section-title">
@@ -70,63 +70,29 @@
       <div class="checkbox-grid">
         <div class="checkbox-row">
           <label class="checkbox-item">
-            <input type="checkbox" />
+            <input id="chk-mudan" type="checkbox" />
             <span class="checkbox-box"></span>
             <span class="checkbox-label">무단 전자기기 사용</span>
           </label>
         </div>
         <div class="other-checkbox-wrap">
           <label class="checkbox-item other-top" onclick="toggleOther(this, 'other-elec')">
-            <input type="checkbox" />
+            <input id="chk-elec-etc" type="checkbox" />
             <span class="checkbox-box"></span>
             <span class="checkbox-label">기타</span>
           </label>
           <div class="other-input-wrap" id="other-elec">
-            <textarea class="other-input" placeholder="기타 내용을 자세히 입력하세요..."></textarea>
+            <textarea id="txt-elec-etc" class="other-input" placeholder="기타 내용을 자세히 입력하세요..."></textarea>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 생활 태도 -->
-    <!-- <div class="section-card" style="animation-delay:0.20s">
-      <div class="section-title">
-        <span class="dot"></span>
-        생활 태도
-      </div>
-      <div class="checkbox-grid">
-        <label class="checkbox-item">
-          <input type="checkbox" />
-          <span class="checkbox-box"></span>
-          <span class="checkbox-label">수업 태도 불량</span>
-        </label>
-        <label class="checkbox-item">
-          <input type="checkbox" />
-          <span class="checkbox-box"></span>
-          <span class="checkbox-label">무단 이석 / 무단 외출</span>
-        </label>
-        <label class="checkbox-item">
-          <input type="checkbox" />
-          <span class="checkbox-box"></span>
-          <span class="checkbox-label">지각 / 조퇴</span>
-        </label>
-        <label class="checkbox-item">
-          <input type="checkbox" />
-          <span class="checkbox-box"></span>
-          <span class="checkbox-label">기타</span>
-        </label>
-      </div>
-      <div class="memo-wrap">
-        <div class="memo-label">메모</div>
-        <textarea placeholder="세부 내용을 입력하세요..."></textarea>
-      </div>
-    </div> -->
-
     <!-- Save -->
     <button class="btn-save" onclick="handleSave()">저 장</button>
   </div>
 
-  <div class="toast" id="toast">✅ 지도 내용이 저장되었습니다.</div>
+  <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
 </body>
