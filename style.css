@@ -1,0 +1,388 @@
+:root {
+    --gold: #C8892A;
+    --gold-light: #F5E6C8;
+    --gold-soft: #FDF6E9;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --text-dark: #2C2C2C;
+    --text-mid: #555555;
+    --text-light: #999999;
+    --border: #E0D8CC;
+    --shadow: rgba(200, 137, 42, 0.12);
+    --radius: 14px;
+    --radius-sm: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 60px;
+}
+
+.page-wrap {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 20px;
+}
+
+/* ─── Header ─── */
+.header {
+    text-align: center;
+    padding: 40px 0 24px;
+    animation: fadeDown 0.5s ease both;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-light);
+    border: 1.5px solid var(--gold);
+    border-radius: 50px;
+    padding: 10px 28px;
+}
+
+.header-badge .icon {
+    font-size: 18px;
+}
+
+.header-badge h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.header-sub {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+/* ─── Divider ─── */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 24px;
+}
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+.divider span {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+}
+
+/* ─── Card ─── */
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px var(--shadow);
+    animation: fadeUp 0.5s ease both;
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.20s; }
+
+/* ─── Input fields ─── */
+.input-group {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.input-group:last-child {
+    margin-bottom: 0;
+}
+
+.input-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--gold-soft);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-light);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200, 137, 42, 0.1);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+/* ─── Section card ─── */
+.section-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px var(--shadow);
+    animation: fadeUp 0.5s ease both;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--gold-light);
+}
+
+.section-title .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+}
+
+/* ─── Checkbox grid ─── */
+.checkbox-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    flex: 1;
+    min-width: 130px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 5px;
+    background: var(--white);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.18s ease;
+}
+
+.checkbox-box::after {
+    content: '';
+    width: 5px;
+    height: 9px;
+    border: 2px solid transparent;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.15s ease;
+}
+
+.checkbox-item input[type="checkbox"]:checked ~ .checkbox-box {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.checkbox-item input[type="checkbox"]:checked ~ .checkbox-box::after {
+    border-color: #fff;
+    transform: rotate(45deg) scale(1);
+}
+
+.checkbox-label {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.4;
+    transition: color 0.15s;
+}
+
+.checkbox-item:has(input:checked) .checkbox-label {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* ─── Other (기타) inline input ─── */
+.other-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.other-input-wrap {
+    flex: 1;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.3s ease;
+    margin-top: 0;
+}
+
+.other-input-wrap.visible {
+    max-height: 120px;
+    opacity: 1;
+    margin-top: 2px;
+}
+
+.other-input {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--gold-soft);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    color: var(--text-dark);
+    outline: none;
+    resize: none;
+    min-height: 60px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.other-input::placeholder {
+    color: var(--text-light);
+}
+
+.other-input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(200, 137, 42, 0.1);
+}
+
+/* inline 기타 행: 체크박스+라벨 고정, 나머지 입력란 */
+.other-checkbox-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.other-top {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.other-top .checkbox-label {
+    margin-left: 8px;
+}
+
+/* ─── Save button ─── */
+.btn-save {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    cursor: pointer;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(200, 137, 42, 0.35);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    animation: fadeUp 0.5s 0.3s ease both;
+}
+
+.btn-save:hover {
+    background: #b37820;
+    box-shadow: 0 6px 22px rgba(200, 137, 42, 0.45);
+}
+
+.btn-save:active {
+    transform: scale(0.98);
+}
+
+/* ─── Toast ─── */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #2C2C2C;
+    color: #fff;
+    font-size: 13px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
